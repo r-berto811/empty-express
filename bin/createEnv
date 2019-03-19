@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+// Load dependencies.
+const path = require('path')
+const createEnv = require('../lib/env-creator')
+
+createEnv(
+  path.resolve('.env'),
+  path.resolve('.env.defaults'),
+  {
+    input: process.stdin,
+    output: process.stdout
+  }
+)

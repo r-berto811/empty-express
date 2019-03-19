@@ -1,0 +1,39 @@
+{
+  "name": "empty-express-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rm -rf ./.dev && mkdir ./.dev && webpack --watch --progress --config ./config/webpack.dev.js",
+    "build": "rm -rf ./dist && mkdir ./dist && APP_ENV=production webpack --config ./config/webpack.prod.js",
+    "server": "node ./dist/server.js",
+    "start": "npm run build && npm run server",
+    "cluster": "node ./dist/cluster.js",
+    "postinstall": "node ./bin/createEnv && node ./bin/createDirs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "moment": "^2.22.2",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.42.0",
+    "simple-node-logger": "^0.93.37"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "dotenv": "^6.2.0",
+    "dotenv-webpack": "^1.7.0",
+    "nodemon": "^1.18.10",
+    "readline": "^1.3.0",
+    "sequelize-cli": "^5.4.0",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-merge": "^4.2.1",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
+  }
+}
